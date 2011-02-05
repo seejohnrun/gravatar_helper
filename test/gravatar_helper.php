@@ -1,6 +1,6 @@
 <?php
 
-require dirname(__FILE__) . '/../gravatar_helper.php';
+require dirname(__FILE__) . '/../helpers/gravatar_helper.php';
 
 class Gravatar_helper_test extends PHPUnit_Framework_TestCase {
 

@@ -8,9 +8,9 @@ To load the helper, drop gravatar_helper.php into helpers, and then:
 
     $this->load->helper('gravatar');
 
-Or you can just checkout the entire directory into helpers/gravatar, and:
+To use this as a [spark](http://getsparks.org/), you can just do:
 
-    $this->load->helper('gravatar/gravatar');
+    $ tools/spark install gravatar_helper
 
 To use the helper, use these to generate image links:
 

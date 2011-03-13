@@ -10,7 +10,7 @@ To load the helper, drop gravatar_helper.php into helpers, and then:
 
 To use this as a [spark](http://getsparks.org/), you can just do:
 
-    $ tools/spark install gravatar_helper
+    $ php tools/spark install gravatar_helper
 
 To use the helper, use these to generate image links:
 

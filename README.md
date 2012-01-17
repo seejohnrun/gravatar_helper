@@ -6,21 +6,40 @@ This is a really simple Gravatar helper class for use with CodeIgniter.  It make
 
 To load the helper, drop gravatar_helper.php into helpers, and then:
 
-    $this->load->helper('gravatar');
+``` php
+<?php
+$this->load->helper('gravatar');
+```
 
 To use this as a [spark](http://getsparks.org/), you can just do:
 
-    $ php tools/spark install gravatar_helper
+``` bash
+$ php tools/spark install gravatar_helper
+```
 
 To use the helper, use these to generate image links:
 
-    Gravatar_helper::from_email('john.crepezzi@gmail.com');
-    Gravatar_helper::from_hash(md5('john.crepezzi@gmail.com')); // if you only have the hash
+``` php
+<?php
+Gravatar_helper::from_email('john.crepezzi@gmail.com');
+Gravatar_helper::from_hash(md5('john.crepezzi@gmail.com')); // if you only have the hash
+```
 
 And to add some options (you can make any of these null to default to the gravatar defaults):
 
-    // email address, rating, size (square), and default image
-    Gravatar_helper::from_email('john.crepezzi@gmail.com', 'X', 80, 'http://images.com/image.jpg');
+``` php
+<?php
+// email address, rating, size (square), and default image
+Gravatar_helper::from_email('john.crepezzi@gmail.com', 'X', 80, 'http://images.com/image.jpg');
+```
+
+Or get the profile:
+
+``` php
+<?php
+Gravatar_helper::profile_from_email('john.crepezzi@gmail.com');
+Gravatar_helper::profile_from_hash(md5('john.crepezzi@gmail.com'));
+```
 
 ### Author
 

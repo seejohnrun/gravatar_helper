@@ -28,4 +28,14 @@ class Gravatar_helper_test extends PHPUnit_Framework_TestCase {
         $this->assertEquals(Gravatar_helper::from_hash('1', null, null, $url), self::$base . "?gravatar_id=1&default=$url");
     }
 
+    function testProfileWithEmail() {
+        $res = Gravatar_helper::profile_from_email('seejohnrun@gmail.com');
+        $this->assertObjectHasAttribute('id', $res);
+    }
+
+    function testProfileWithBadEmail() {
+        $res = Gravatar_helper::profile_from_email('john.crepezzi@a.com');
+        $this->assertNull($res);
+    }
+
 }

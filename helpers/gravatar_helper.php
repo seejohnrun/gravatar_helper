@@ -52,7 +52,18 @@ class Gravatar_helper {
      * $hash: the hash to fetch the profile for
      */
     static function profile_from_hash($hash) {
-        $raw = file_get_contents(self::$profile_base_url . $hash . '.json');
+        $opts = array(
+            'http' => array(
+                'method' => 'GET',
+                'user_agent' => 'PHP GravatarHelper'
+            )
+        );
+        $context = stream_context_create($opts);
+        try {
+            $raw = file_get_contents(self::$profile_base_url . $hash . '.json', false, $context);
+        } catch (Exception $e) {
+            return null;
+        }
         if ($raw) {
             $data = json_decode($raw);
             $entry = $data->entry;
